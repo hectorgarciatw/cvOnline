@@ -62,8 +62,8 @@
                                             ><span class="fa-container text-center mr-2"><i class="fas fa-globe"></i></span>Sitio web</a
                                         >
                                     </li>
-                                    <li class="mb-3" onclick="downloadPdf()">
-                                        <a href="#" style="color: #ffffff"
+                                    <li class="mb-3">
+                                        <a href="/uploads/hgarciapdf.pdf" download="hgarciaCvPdf" style="color: #ffffff"
                                             ><span class="fa-container text-center mr-2"><i class="far fa-file-pdf"></i></span>Descargar C.V</a
                                         >
                                     </li>
@@ -674,32 +674,5 @@
         </article>
 
         <footer class="footer text-center pt-2 pb-5"></footer>
-        <script src="/assets/js/html2pdf.bundle.js"></script>
-        <script>
-            const downloadPdf = () => {
-                const $elementoParaConvertir = document.body; // <-- Aquí puedes elegir cualquier elemento del DOM
-                html2pdf()
-                    .set({
-                        margin: 1,
-                        filename: "documento.pdf",
-                        image: {
-                            type: "jpeg",
-                            quality: 0.98,
-                        },
-                        html2canvas: {
-                            scale: 8, // A mayor escala, mejores gráficos, pero más peso
-                            letterRendering: true,
-                        },
-                        jsPDF: {
-                            unit: "in",
-                            format: "a4",
-                            orientation: "portrait", // landscape o portrait
-                        },
-                    })
-                    .from($elementoParaConvertir)
-                    .save()
-                    .catch((err) => console.log(err));
-            };
-        </script>
     </body>
 </html>
